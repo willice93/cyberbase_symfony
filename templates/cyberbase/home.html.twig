@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}	
+
+{% block body %}	
+    <div class="features-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Bienvenue </h2>
+                <p class="text-center">La cyberbase vous offre la possibilité de vous initié a l'informatique. &nbsp;</p>
+            </div>
+            <div class="row features">
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-desktop icon"></i>
+                    <h3 class="name">Suivre des cours&nbsp;</h3>
+                    <p class="description">Suivre des cours adapté à votre niveau, accompagné d'un systeme de points comptant votre progression, pour des cours de plus en plus pointu.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-list-alt icon"></i>
+                    <h3 class="name">Evaluer ces compétences</h3>
+                    <p class="description">Des quizz ont été mis en place à chaque cour vous permettant de tester vos connaissances et de savoir si le cour à bien été assimilé.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-user-o icon"></i>
+                    <h3 class="name">Public</h3>
+                    <p class="description">Sénior, personne n'ayant aucune connaissance informatique ou meme renforcement de ces connaissances ? Il y'en n'a pour tout le monde.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-child icon"></i>
+                    <h3 class="name">Accompagnement</h3>
+                    <p class="description">Des animateurs experimenté sont à votre disposition et suivent votre progression pour orienté au mieux.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-search icon"></i>
+                    <h3 class="name">Contenu</h3>
+                    <p class="description">Apprendre à utiliser un clavier, imprimer un document, remplir sa feuille d'imposition et la renvoyer..? un contenu riche et varier vous attendent ici</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-server icon"></i>
+                    <h3 class="name">Mise à jour</h3>
+                    <p class="description">Une equipe de developpeur met à jour ce site continuellement pour vous permettre d'evoluer dans le meilleur confort possible.</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-center"><a href="{{path('lessonList')}}"><button class="btn btn-primary bounce animated" type="link"><strong>Cliquez ici pour continuer</strong></button></a></h2>
+    </div>
+    {% endblock %}
+ 
