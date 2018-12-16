@@ -1,0 +1,22 @@
+ {% extends 'base.html.twig' %}
+ {% form_theme formUser 'bootstrap_4_layout.html.twig' %}
+
+ {% block body %}
+ <h1>Gestion des utilisateurs </h1>	
+
+
+{{form_start(formUser)}}
+{{form_widget(formUser)}}
+
+
+<button type="submit" class="btn btn-success"> 
+{% if editMode %}
+	Modifier le cour </button>
+{% else %}
+	 
+Ajouter un cour 
+{{form_end(formUser)}}
+ 
+
+ {% endif %}
+{% endblock %}

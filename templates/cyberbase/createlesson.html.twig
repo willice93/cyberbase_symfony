@@ -1,7 +1,26 @@
  {% extends 'base.html.twig' %}
+ {% form_theme formLesson 'bootstrap_4_layout.html.twig' %}
 
  {% block body %}
  <h1>Creation d'un cour </h1>	
-{{form(formLesson)}}
- {% endblock %}
 
+
+{{form_start(formLesson)}}
+{{form_row(formLesson.title,{'attr':{'placeholder':"titre"}})}}
+{{form_row(formLesson.video,{'attr':{'placeholder':"video"}})}}
+{{form_row(formLesson.image,{'attr':{'placeholder':"image"}})}}
+{{form_row(formLesson.quizz,{'attr':{'placeholder':"quizz"}})}}
+{{form_row(formLesson.description,{'attr':{'placeholder':"desc"}})}}
+{{form_row(formLesson.level,{'attr':{'placeholder':"niveau"}})}}
+
+<button type="submit" class="btn btn-success"> 
+{% if editMode %}
+	Modifier le cour </button>
+{% else %}
+	 
+Ajouter un cour 
+{{form_end(formLesson)}}
+ 
+
+ {% endif %}
+{% endblock %}
