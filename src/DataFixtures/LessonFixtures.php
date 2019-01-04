@@ -17,8 +17,8 @@ class LessonFixtures extends Fixture
     		$lesson= new Lesson();
 
     		$lesson->setTitle("titre numero $i");
-    		$lesson->setVideo("http//adresse video");
-    		$lesson->setImage("http//placehold.it/500x300");
+    		$lesson->setVideo("http://adresse video");
+    		$lesson->setImage("http://placehold.it/500x300");
     		$lesson->setQuizz("<p>Lorem ipsum dolor sit amet.</p>");
     		$lesson->setDescription("<p>Lorem ipsum dolor sit amet.</p>");
     		$lesson->setLevel(2);
