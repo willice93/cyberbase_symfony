@@ -1,0 +1,10 @@
+! combien de zones différente a t'on dans le clavier
+-3
+-*4
+-5
+-6
+!dans la partie alhpanumerique que peut on trouvé 
+- les lettre de l'aphabet uniquement
+-les chiffre uniquement
+-*les deux
+- aucun

@@ -1,0 +1,22 @@
+!c'est une question romain ?
+-oui
+-non
+-peut etre
+-*pes de bras pas de chocolat
+
+! une autre question senzo ?
+-*reponceB2
+-reponceC2
+-reponseD2
+-reponseD2
+!question3
+-*reponceA3
+-reponceB3
+-reponceC3
+-reponseD3
+
+!Squestion4
+-reponceA4
+-reponceB4
+-*reponceC4
+-reponseD4

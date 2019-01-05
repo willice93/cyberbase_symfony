@@ -31,55 +31,7 @@ class CyberbaseController extends AbstractController
     public function home()
     {return $this->render('cyberbase/home.html.twig');}
 
-    /**
- * [create description]
- * @Route("/newLesson",name= "new_lesson")
- * @Route("/cour/{id}/edit", name="lesson_edit")
- */
-        public function formLesson(Lesson $lesson = null, Request $request,ObjectManager $manager){
-            if (!$lesson) {
-                 $lesson= new Lesson();
-            }
-           
-           
-            $form = $this->createForm(LessonType::class,$lesson);
-
-            $form->handleRequest($request);
-           
-            if ($form->isSubmitted() && $form->isValid()) {
-
-                 $manager->persist($lesson);
-                $manager->flush();
-             
-                       
-             return $this->redirectToRoute('lesson',['id'=> $lesson->getId()]);}
-         
-            return $this->render('cyberbase/createlesson.html.twig',
-                ['formLesson'=> $form->createView(),
-                'editMode'=> $lesson->getId() !== null
-            ]);
-        }
-
-/**
- * @Route("/cour/{id}",name="lesson")
- */
-    public function cour(Lesson $lesson){
-
-        
-
-
-        return $this->render('cyberbase/lesson.html.twig',['lesson' => $lesson]);}
-    /**
- * @Route("/courListe",name="lessonList")
- */
-    public function courListe(LessonRepository $repo){
-
-        
-        $lessons=$repo->findAll();
-        return $this->render('cyberbase/lessonList.html.twig',[
-            'lessons'=> $lessons
-        ]);}
-
+ 
        
     /**
  * [create description]
