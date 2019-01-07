@@ -52,27 +52,7 @@ public function formLesson(Lesson $lesson = null, Request $request,ObjectManager
     ]);
 }
 
-/**
-* @Route("/cour/{id}",name="lesson")
-*/
 
-public function cour(Lesson $lesson){
-    
-//aller chercher le quizz dans le dossier public avec la variable quizz de la lesson et le chemin asset
-
-$question = file_get_contents('asset/qcm/'.$lesson->getQuizz().'', "r");
-    
-    $question = explode("!", $question);
-    $num=count($question);
-for ($i=1; $i <$num ; $i++) { 
-    $reponse[$i]=$question[$i];
-}
-    var_dump($question);
-    var_dump($reponse);
-
-return $this->render('cyberbase/lesson.html.twig',['lesson' => $lesson,
-                                                    'question'=>$question,
-                                                    'reponse'=>$reponse]);}
 /**
 * @Route("/courListe",name="lessonList")
 */
