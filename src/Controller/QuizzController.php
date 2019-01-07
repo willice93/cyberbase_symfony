@@ -26,26 +26,36 @@ class QuizzController extends AbstractController
         //aller chercher le quizz dans le dossier public avec la variable quizz de la lesson et le chemin asset
         
         $question = file_get_contents('asset/qcm/'.$lesson->getQuizz().'', "r");
-            
-            $question = explode("!", $question);
+        $findme   = '*';
+         $question = explode("!", $question);
             $numQuestion=count($question);
-        for ($i=1; $i <$numQuestion ; $i++) { 
-            $reponse[$i] = explode("-", $question[$i]);
-          $arrayQuestion[]=$reponse[$i][0];
-          $lenght=count($reponse[$i]);
-          for ($x=1; $x <$lenght ; $x++) { 
+        
+            for ($i=1; $i <$numQuestion ; $i++) { 
+                $reponse[$i] = explode("-", $question[$i]);
+                $arrayQuestion[]='<br><b>'.$reponse[$i][0].'</b><br><br>';
+                 $lenght=count($reponse[$i]);
+                            for ($x=1; $x <$lenght ; $x++) { 
+                        
+                              $pos = strpos($reponse[$i][$x], $findme);
+                              
 
-              $arrayAnswer[$i][]=$reponse[$i][$x];
+                                        
+                            if ($pos === false){ $reponse[$i][$x]='<input type="radio" name="a1" value="0">'.$reponse[$i][$x].'<br>';}
+                            
+                             else{$answer=explode("*",$reponse[$i][$x]);
+                                $reponse[$i][$x]='<input type="radio" name="a1" value="1">'.$answer[1].'<br>';}
+                                $arrayQuestion[]=$reponse[$i][$x];
+                                
+                                    
           }
             
         }
-           
-            
         
-        var_dump( $arrayQuestion[0]);
-            var_dump( $arrayAnswer[1]);
+        
+     
         
         return $this->render('cyberbase/lesson.html.twig',['lesson' => $lesson,
-                                                            'question'=>$question
+                                                            'question'=>$arrayQuestion,
+                                                            //'reponse'=>$arrayAnswer
         ]);}
 }
